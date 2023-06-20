@@ -1,0 +1,81 @@
+https://github.com/ParkYoungWoong/starbucks-vanilla-app
+
+01. 
+웹 상단 starbucks 아이콘 자동 생성 이유는 favicon.ico 가 있어 자동으로 반영됨 
+아이콘 이름을 starbucks로 지으면 안되고 꼭 favicon.ico로 만들어야 하며, index.html과 같이 root 경로에 둬야함.
+고해상도의 png 파일을 활용 하고 싶다면, html에서 link 사용 <link rel="icon" href="./favicon.png">
+    
+스타일 초기화 (google : reset.css cdn) https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    
+CSS 폴더 생성 -> 파일 main.css 생성
+    
+index.html 과 main.css 파일 연동 <link rel="stylesheet" href="./CSS/main.css">
+
+빈테그에 / 넣어줌
+   
+02.  
+https://github.com/ParkYoungWoong/starbucks-vanilla-app 이동 
+오픈그래프 확인 -> meta 테그
+트위터 카드  -> meta 테그
+빠르게 확인 할수 있는 정보이기에 될수 있으면 위쪽에 넣어 둬라 
+
+images/starbucks_seo.jpg : SEO는 검색 엔진 최적화 , Search Engine Optimizaiton
+
+03. 
+웹 브라우저 별로 fonts가 다름 
+google : google fonts -> https://fonts.google.com/
+폰트 nanum -> Nanum Gothic 선택
+폰트가 무거움 , 웹페이지에서 폰트 남발하면 안됨
+
+400, 700 선택 link url 복사
+main.css 앞단에 넣아야 함.
+
+적용하가 위하여 방금 url 복사한 부분 아래 CSS rules to specify families 에서
+font-family: 'Nanum Gothic', sans-serif; 복사
+main.css의 body에 붙여 넣기
+
+유료폰트 사용하지 않도록 주의가 필요 , 무료 라이센스 폰드 mit등 
+----------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starbucks Coffee Korea</title>
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Starbucks" />
+  <meta property="og:title" content="Starbucks Coffee Korea" />
+  <meta property="og:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
+  <meta property="og:image" content="./images/starbucks_seo.jpg" />
+  <meta property="og:url" content="https://starbucks.co.kr" />
+  
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="Starbucks" />
+  <meta property="twitter:title" content="Starbucks Coffee Korea" />
+  <meta property="twitter:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
+  <meta property="twitter:image" content="./images/starbucks_seo.jpg" />
+  <meta property="twitter:url" content="https://starbucks.co.kr" />
+  
+  <link rel="icon" href="./favicon.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/main.css" />
+</head>
+<body>
+  Hello world!
+</body>
+</html>
+
+
+----------------------------------------------------------------------------------------------
+body {
+  color: red;
+  font-size: 100px;
+  font-family: 'Nanum Gothic', sans-serif;
+}

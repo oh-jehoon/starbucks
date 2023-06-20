@@ -1,0 +1,71 @@
+12. 헤더와 드롭다운 메뉴 - 전역 배지(GSAP) (2) JS
+
+// console.log('JS');   연결 확인 부분
+
+const searchEl = document.querySelector('.search');
+const searchInputEl = searchEl.querySelector('input');
+
+searchEl.addEventListener('click', function () {
+  // Logic..
+  searchInputEl.focus();
+});
+
+searchInputEl.addEventListener('focus', function () {
+  searchEl.classList.add('focused');
+  searchInputEl.setAttribute('placeholder', '통합검색');
+});
+
+searchInputEl.addEventListener('blur', function () {
+  searchEl.classList.remove('focused');
+  searchInputEl.setAttribute('placeholder', '');
+});
+
+// badge가 어느정도 값 아래로 내려가면 안보이게 함
+const badgeEl = document.querySelector('header .badges');
+
+// window.addEventListener('scroll', function() {
+//   console.log('scroll!');
+// });
+
+// 부하를 줄이기 위하여 
+// window.addEventListener('scroll', _.throttle(function() {
+//   // console.log('scroll!') ;
+//   console.log(window.scrollY);
+//   if (window.scrollY > 500) {
+//     // 배지 숨기기
+//     // badgeEl.style.display = 'none';
+//     // gsap.to(요소, 지속시간, 옵션);
+//     gsap.to(badgeEl, .6, {
+//       opacity: 0,
+//       display: 'none'
+//     })
+//   } else {
+//     // 배지 보이기
+//     // badgeEl.style.display = 'block';
+//     gsap.to(badgeEl, .6, {
+//       opacity: 1,
+//       display: 'block'
+//     })
+//   }
+// }, 300));  //300은 ms 0.3초
+// _.throttle(함수, 시간)
+
+window.addEventListener('scroll', _.throttle(function () {
+  // 페이지 스크롤 위치가 500px이 넘으면.
+  if (window.scrollY > 500) {
+    // Badge 요소 숨기기!
+    gsap.to(badgeEl, .6, {
+      opacity: 0,
+      display: 'none'
+    });
+
+  // 페이지 스크롤 위치가 500px이 넘지 않으면.
+  } else {
+    // Badge 요소 보이기!
+    gsap.to(badgeEl, .6, {
+      opacity: 1,
+      display: 'block'
+    });
+  }
+}, 300));
+// 상단으로 스크롤 버튼을 클릭하면,
