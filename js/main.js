@@ -1,23 +1,4 @@
 // console.log('JS');   연결 확인 부분
-
-const searchEl = document.querySelector('.search');
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click', function () {
-  // Logic..
-  searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function () {
-  searchEl.classList.add('focused');
-  searchInputEl.setAttribute('placeholder', '통합검색');
-});
-
-searchInputEl.addEventListener('blur', function () {
-  searchEl.classList.remove('focused');
-  searchInputEl.setAttribute('placeholder', '');
-});
-
 // badge가 어느정도 값 아래로 내려가면 안보이게 함
 const badgeEl = document.querySelector('header .badges');
 
@@ -210,8 +191,6 @@ spyEls.forEach(function (spyEl) {
 })
 
 
-// 올해가 언제인가..??
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear();  // 2023년 반환
+
 
 
